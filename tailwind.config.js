@@ -7,9 +7,10 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: (_) => ({
-        'custom-background': "url('./src/assets/brownish bg.jpg')",
-      })
+      // backgroundImage: (_) => ({
+      //   'custom-background': "url('./src/assets/brownish bg.jpg')",
+      //   // You will use it in your page as bg-custom-background
+      // })
     },
   },
   plugins: [],
