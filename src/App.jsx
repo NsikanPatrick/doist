@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaPlus, FaTrash, FaPencilAlt } from "react-icons/fa";
 import "./App.css";
+import bgImage from "./assets/brownish1.jpg";
 import { db } from "./firebase"; // Import your Firebase configuration
 import {
   collection,
@@ -154,8 +155,8 @@ function App() {
 
   return (
     <>
-      <div className="app-layout min-h-screen flex flex-col gap-4 items-center justify-center p-4 bg-center bg-cover">
-        <div className="bg-amber-100 p-6 rounded shadow-md w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
+      <div style={{backgroundImage: `url(${bgImage})`}} className="bg-cover bg-center min-h-screen flex flex-col gap-4 items-center justify-center p-4">
+        <div className="fixed top-1 left-50 right-50 z-10 bg-amber-100 p-6 rounded shadow-md w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
           <h1 className="text-3xl font-bold text-center mb-4">Doist App</h1>
           {/* Below is how environment variable is received in a html file */}
           {/* <p>{import.meta.env.VITE_API_KEY}</p> */}
@@ -179,7 +180,7 @@ function App() {
         {/* Displaying the list of todos */}
 
         {todos.length > 0 && (
-          <div className="bg-white-600 p-3 shadow-md rounded w-full h-full sm:w-1/2 md:w-1/2 lg:w-1/2">
+          <div className="relative mt-44 bg-white-600 p-3 shadow-md rounded w-full h-full sm:w-1/2 md:w-1/2 lg:w-1/2">
             <ul className="min-h-[200px]">
               {todos
                 .sort((a, b) => b.createdAt - a.createdAt)
